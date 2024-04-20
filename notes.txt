@@ -1,0 +1,19 @@
+This code consists of two main parts: an HTML file (index.html) and a JavaScript file (main.js).
+
+HTML (index.html): This file sets up the structure of the webpage. It includes the Bootstrap CSS and JavaScript libraries for styling and functionality. It also includes a <div> with the id result, where the fetched data will be displayed.
+
+JavaScript (main.js): This file contains the logic to fetch and display data from an API. Here’s a step-by-step breakdown:
+It starts by declaring an empty string htmlData.
+
+It then makes a fetch request to the https://jsonplaceholder.typicode.com/photos API.
+The fetch function returns a Promise that resolves to the Response to that request, whether it is successful or not. This is logged to the console.
+
+The then method is used to extract the JSON body content from the response using res.json().
+Another then method is used to handle the data returned from the previous then. It slices the first 50 items from the data and logs them to the console.
+
+It then loops over each item in the data array, and for each item, it creates a Bootstrap card with the item’s image and title. This HTML string is added to htmlData.
+
+Finally, it sets the innerHTML of the result div to htmlData, effectively displaying the cards on the webpage.
+
+If there’s an error at any point in this process, it’s caught and logged to the console with catch.
+This code essentially fetches data from an API and displays it on a webpage in the form of Bootstrap cards. Each card shows an image and a title from the fetched data. The user can modify this code to fetch different data or change how the data is displayed. 
